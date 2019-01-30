@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<body>
+	<h2>Factorial</h2>
+		Input number: <input id="userinput"><br>
+		<button id='s'>Submit</button>
+	
+	<p id="output"></p>
+	
+	<script>
+		function processInput(){
+			let input = document.getElementById('userinput').value;
+			document.getElementById('output').innerHTML = "";
+			
+			if(!isNaN(input) && input>-1){
+				let val = function fac(n){
+					if(n === 0){
+						return 1;
+					}
+					return n*fac(n-1);
+				}(input);
+				document.getElementById('output').innerHTML = val;
+				console.output(val);
+			}
+			else{
+				document.getElementById('output').innerHTML = "Not a non-negative number!";
+				console.output("Not a non-negative number!");
+			}
+		}		
+		document.getElementById('s').addEventListener('click', processInput);
+	</script>
+</body>
+</html>

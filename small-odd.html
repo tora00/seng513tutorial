@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<body>
+	<h2>Smaller odd</h2>
+		Input number: <input id="userinput"><br>
+		<button id='s'>Submit</button>
+	
+	<p id="output"></p>
+	
+	<script>
+		function processInput(){
+			let input = document.getElementById('userinput').value;
+			document.getElementById('output').innerHTML = "";
+			
+			if(!isNaN(input)){
+				for(let i=input; i>0; i--){
+					if((i%2)==1){
+						document.getElementById('output').innerHTML += i + "<br>";
+						console.output(i);
+					}
+				}
+			}
+			else{
+				document.getElementById('output').innerHTML = "Not a number!";
+				console.output("Not a number!");
+			}
+		}		
+		document.getElementById('s').addEventListener('click', processInput);
+	</script>
+</body>
+</html>
